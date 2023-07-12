@@ -1,0 +1,255 @@
+/* Transition for game.html page */
+@keyframes transitionIn
+{
+  0%{
+    opacity: 0;
+    display: none;
+    transform: translateY(-50px);
+  }
+  100%{
+    opacity: 1;
+    display: block;
+    transform: translateY(0);
+  }
+}
+
+body{
+  animation: transitionIn 2s;
+}
+
+.clearfix {
+    clear: both;
+}
+
+#main{
+  height: 56px;
+  box-shadow: 0px 0px 50px black;
+    background-color: transparent;
+    position: fixed;
+    width: -webkit-fill-available;
+    z-index: 1;
+}
+
+.head {
+    padding: 5px;
+    margin-bottom: 0px;
+}
+
+.col-div-6 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.profile {
+  display: inline-block;
+  width: auto;
+}
+
+.pro-img {
+  float: left;
+  width: 40px;
+  margin-top: 5px;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+body{
+  color: black;
+  /* animation-delay: 2s; */
+}
+
+/* Exit Gate Pop Up */
+#popupAction, #popupActionTwo,
+#popupActionFour,#popupActionFive,
+#popupActionSix,#popupActionSeven,
+#popupActionEight,#popupActionNine,
+#popupActionTwelve{
+  position:fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,.30);
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+}
+#popupAction.active, #popupActionTwo.active,
+#popupActionFour.active,#popupActionFive.active,
+#popupActionSix.active,#popupActionSeven.active,
+#popupActionEight.active,#popupActionNine.active,
+#popupActionTwelve.active
+{
+  top: 50% ;
+  visibility: visible;
+  opacity: 1;
+  transition: .5s;
+  border: 2px solid #beb8b8;
+  border-radius: 6px;
+  background-color: #989898;
+  border: 2px solid #797676;
+  box-shadow: 2px 2px 2px 2px black;
+}
+
+
+#popupActionThree,#popupActionTen{
+  position:fixed;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,.30);
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+  animation: popupActionThreeOut 2s;
+}
+#popupActionThree.active,#popupActionTen.active{
+  top: 25% ;
+  left: 50%;
+  visibility: visible;
+  opacity: 1;
+  /* transition: .5s; */
+  border: 2px solid #beb8b8;
+  border-radius: 6px;
+  background-color: #989898;
+  border: 2px solid #797676;
+  box-shadow: 2px 2px 2px 2px black;
+  animation: popupActionThreeIn 2s;
+}
+#popupActionEleven{
+  position:fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,.30);
+  background: transparent;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+}
+#popupActionEleven.active{
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  width: 400px;
+  height: 400px;
+  transition: .5s;
+  border-radius: 100%;
+  background-color: transparent;
+}
+ @keyframes popupActionThreeOut{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+@keyframes popupActionThreeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.popHeading{
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.inputContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.btn{
+  align-items: center;
+}
+
+.popUpEntry
+{
+  margin-right: 15px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.popUpBox{
+  border: 2px solid #beb8b8;
+  border-radius: 6px;
+  background-color: #c2c1c1;
+  border: 2px solid #797676;
+  /* box-shadow: 1px 2px 2px 2px rgb(68, 67, 67); */
+  color: black;
+}
+
+.popUpBox:hover{
+  border: 2px solid black;
+}
+
+.btnArrange{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 35px;
+}
+
+.btn{
+  border: 2px solid #beb8b8;
+  border-radius: 6px;
+  background-color: #c2c1c1;
+  border: 2px solid #3b3b3b;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.submit{
+  background-color: rgb(68, 129, 68);
+  border: 2px solid #2c402c;
+  box-shadow: 2px 2px 2px 2px #2f2e2e;
+}
+
+.submit:hover{
+  background-color: rgb(83, 131, 83);
+  border: 2px solid rgb(38, 83, 17);
+  font-weight: bold;
+}
+
+.cancel{
+  background-color: rgb(193, 197, 193);
+  /* font-weight: bold; */
+  border: 2px solid #454645;
+  box-shadow: 2px 2px 2px 2px #2f2e2e;
+}
+
+.cancel:hover{
+  background-color: rgb(237, 240, 237);
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+#blur.active
+{
+  filter: blur(10px);
+  z-index: -1;
+  user-select: none;
+  pointer-events: none;
+}
+
+
+.leaveImage{
+  height: 400px;
+}

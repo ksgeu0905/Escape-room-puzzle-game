@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link rel="stylesheet" href="css/game.css" />
+
+    <!-- bootstrap link -->
+    <link
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://unpkg.com/swup@3"></script>
+    <title>Level 1</title>
+  </head>
+  <body onload="startCounter()" class="content">
+    <!-- Nav Bar Begin -->
+    <div id="main">
+      <div class="head">
+        <div class="col-div-6">
+          <div style="display: flex">
+            <i
+              class="uil uil-angle-right-b"
+              style="color: white; font-size: 30px"
+            ></i>
+            <span
+              style="font-size: 30px; cursor: pointer; color: white"
+              class="nav"
+            >
+              Puzzle</span
+            >
+          </div>
+
+          <div class="countdown">
+            <span
+              id="time"
+              class="time"
+              style="font-size: 30px; cursor: pointer; color: white"
+              >00:00:00</span
+            >
+          </div>
+
+          <div class="profile">
+            <img
+              src="images/logo.png"
+              class="pro-img"
+              style="margin-right: 15px; margin-top: 0px"
+            />
+            <p
+              style="
+                width: 200px;
+                margin-left: 30px;
+                color: white;
+                margin-top: 9px;
+                font-size: 17px;
+              "
+            >
+              User<br />
+            </p>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+
+
+    <img src="img1.jpg" usemap="#image_map" id="blur">
+    <map name="image_map">
+      
+      
+      <!-- Exit Gate -->
+      <area class='stopRefresh' alt="" title="" onclick="popup('door')" href="#" coords="879,332,1050,664" shape="rect">
+      <div id="popupAction">
+        <h2 class="popHeading">Did You get the code to escape from the room?</h2>
+          <div class="inputContainer">
+            <p class="popUpEntry">Enter Here:</p>
+            <input type="text" id="code" class="popUpBox" placeholder="Enter Code" required>
+            <br>
+          </div>
+          <div class="btnArrange">
+            <button class="btn submit" onclick="submitClicked()">Submit</button>
+            <button onclick="popup('door')" class="btn cancel">Cancel </button>
+          </div>
+        </div> 
+    
+        <!-- exit door wall picture -->
+        <area class='stopRefresh' alt="" title="" onclick="popup('wallPicture')"  href="#" coords="1079,402 1080,407 1079,449 1080,459 1168,465 1171,408 1170,403 " shape="polygon">
+        <div id="popupActionTwo">
+          <h2 class="popHeading">You Got the right Picture</h2>
+          <div class="inputContainer">
+            <p class="popUpEntry" style="text-align: center;">Now another popup will appear for 5sec. So watch it carefully to guess the next word.</p>
+          </div>
+          <div class="btnArrange">
+            <button class="btn submit" onclick="showImage()">View</button>
+            <button onclick="popup('wallPicture')" class="btn cancel">Cancel </button>
+          </div>
+          
+        </div> 
+        
+    <!-- for all Pictures on right wall -->
+    <area class='stopRefresh' alt="" title="" onclick="popup('WrongPicture')" href="#" coords="1428,320 1706,222 1727,243 1711,468 1418,471 1428,320 " shape="polygon">
+    <area class='stopRefresh' alt="" title="" onclick="popup('WrongPicture')" href="#" coords="1732,372 1713,514 1913,527 1915,349 " shape="polygon">
+    <area class='stopRefresh' alt="" title="" onclick="popup('WrongPicture')" href="#" coords="1519,477 1506,573 1589,589 1605,595 1704,608 1709,504 1709,493 1701,482 1691,480 " shape="polygon"> 
+    <area class='stopRefresh' alt="" title="" onclick="popup('WrongPicture')" href="#" coords="1281,346 1275,488 1313,498 1326,351 1310,343 " shape="polygon">
+    <area class='stopRefresh' alt="" title="" onclick="popup('WrongPicture')" href="#" coords="426,348 431,455 431,455 434,480 552,488 552,397 557,383 " shape="polygon">
+    
+    <div id="popupActionThree">
+      <h3 class="popHeading">Nothing Here !! Try Another Object</h3>
+    </div> 
+    
+    <area alt="" class='stopRefresh' title="" href="" onclick="popup('jacket')" coords="183,284 144,304 129,338 88,392 79,469 92,499 103,547 116,601 125,663 138,702 189,702 196,695 213,702 295,667 280,601 288,601 290,573 284,486 262,418 247,390 239,385 260,344 232,306 " shape="polygon">
+    <div id="popupActionTen">
+      <h3 class="popHeading">Beautiful Jacket !! Isn't it?</h3>
+    </div> 
+
+    <!-- Paint Box near to exit door -->
+    <area class='stopRefresh' alt="" onclick="popup('paintBox')" title="" href="#" coords="1117,640 1136,640 1149,646 1149,673 1141,675 1125,675 1117,670 " shape="polygon">
+    <div id="popupActionFour">
+      <h2 class="popHeading">Cool!! Follow these steps to guess the next word</h2>
+      <div class="inputContainer">
+        <p class="popUpEntry" style="text-align: left;">1. After clicking on 'view' button you will be shown 2 pictures for 10sec each one by one.<br>2. Each picture is associated with one question.<br>3. Observe the picture carefully and answer the question that follows. <br>4. If you want to see the previous picture again, then press "Retry" button but remember that you will be charged with 10sec Penalty. <br> <span style="color:rgb(110, 27, 27)">Note: Remember there is a penalty of 10sec for every wrong answer.</span></p>
+      </div>
+      <div class="btnArrange">
+       <button class="btn submit" onclick="showMemorizePicture()">View</button>
+        <button onclick="popup('paintBox')" class="btn cancel">Cancel </button>
+      </div>
+    </div>
+
+
+    <!-- for making word 'what', object->'newspaper on the table' -->
+    <area class='stopRefresh' alt="" title="" onclick="popup('newsPaper')" href="#" coords="1289,673 1310,707 1358,710 1334,678 1318,670 " shape="polygon">
+    <div id="popupActionFive">
+      <h2 class="popHeading">Cool!! Solve the below puzzle to get the next word.</h2>
+      <div class="inputContainer">
+        <p class="popUpEntry" style="text-align: left;">If START is written as TUBSU, then what will be the word corresponding to VGZS with id 4.</p>
+      </div>
+      <div class="btnArrange">
+       <button class="btn submit" onclick="popup('newsPaper')">Done</button>
+      </div>
+    </div>
+    
+    <!-- For making the word 'on' by clicking torch -->
+    <area class="stopRefresh" alt="" title="" href="#" onmouseup="popup('torch')" onmousedown="popup('torch')" coords="1388,702 1409,702 1417,710 1436,710 1468,723 1479,745 1476,772 1460,774 1409,753 1383,742 1374,729 1374,713 " shape="polygon">
+    <div id="popupActionSix">
+      <h2 class="popHeading">Cool!! You got the way it works.</h2>
+      <div class="inputContainer">
+        <p class="popUpEntry" style="text-align: left;">Your next word is "on" and its id is 6.</p>
+      </div>
+      <div class="btnArrange">
+        <button class="btn submit" onclick="popup('torch')">Done</button>
+       </div>
+    </div>
+    
+
+    <!-- For the word "you" -->
+    <area class="stopRefresh" alt="" title="" href="#" onclick="popup('cartoon')" coords="664,592 662,614 667,664 694,664 734,638 726,608 729,581 707,595 " shape="polygon">
+    <div id="popupActionSeven">
+      <p id="incorrectCode" style="color: rgb(110, 24, 24); font-size: 20px; text-align: center;"></p>
+      <h2 class="popHeading">Enter 9 letter Code to see the Hint for next word?</h2>
+        <div class="inputContainer">
+          <p class="popUpEntry">Enter Here:</p>
+          <input type="text" id="youCode" class="popUpBox" placeholder="Enter Code" required>
+          <br>
+        </div>
+        <div class="btnArrange">
+          <button class="btn submit" onclick="checkNineLetterCode()">Submit</button>
+          <button onclick="popup('cartoon')" class="btn cancel">Cancel </button>
+        </div>
+      </div> 
+    
+    
+    <!-- for the Audio -->
+    <area class="stopRefresh" alt="" title="" href="#" onclick="popup('phone')" coords="1082,474 1080,514 1093,514 1093,474 " shape="polygon">
+    <div id="popupActionEight">
+      <h2 class="popHeading" id="audioHeader">Listen to this audio carefully.</h2>
+      <div class="inputContainer">
+        <p class="popUpEntry" style="text-align: left; color: rgb(109, 18, 18);" id="audioNote"><u> Note:</u> - You will not be able to hear the audio again after clicking on done.</p>
+      </div>
+      <br><br>
+      <p style="text-align: center;" id="audioText">
+          <audio controls>
+            <source src="audio/audio.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
+        </p>
+      <div class="btnArrange" id="audioButton">
+       <button class="btn submit" onclick="replaceAudio()">Done</button>
+      </div>
+    </div>
+    
+    <!-- for next poster next to the first poster of left wall and the "Word"-->
+    <area class="stopRefresh" alt="" title="" href="" onclick="popup('posterOne')" coords="557,381 565,461 568,467 573,485 643,486 636,413 643,400 " shape="polygon">
+    <div id="popupActionNine">
+      <h2 class="popHeading">Cool!! Solve the below puzzle to get the next word.</h2>
+      <div class="inputContainer">
+        <p class="popUpEntry" style="text-align: left;">
+          <ul style="font-size: 20px;">
+            <li>Its a 4-letter word, if u replace the last letter with 'st' then the word become the worst word.</li>
+            <li>You are using it right now to understand what I'm saying to you.</li>        
+            <li>What am I talking about?</li>
+            <li>The id of the word word is 1</li>
+          </ul>
+        </p>
+      </div>
+      <div class="btnArrange">
+       <button class="btn submit" onclick="popup('posterOne')">Done</button>
+      </div>
+    </div>
+    
+    
+    <!-- for the clock on the left wall  -->
+    <area class="stopRefresh" alt="" title="" href="" onclick="popup('clocks')" coords="529,247 519,258 521,273 540,284 547,267 538,252 " shape="polygon">
+    <div id="popupActionEleven">
+      <img src="" alt="" id="clock">
+    </div>
+  </map>
+
+  <div id="popupActionTwelve">
+    <p style="justify-content: center; display: flex;">
+    <img src="images/timesUp.png" alt="" srcset="" style="display:flex; width:200px;"></p>
+    <h2 class="popHeading">Opps !! <br>Times Up</h2>
+    <div class="btnArrange">
+      <a href="/index.html"><button onclick="popup('timesUp')" class="btn cancel home" >Home</button></a>
+    </div>
+  </div>
+    
+</body>
+  <script src="js/game.js"></script>
+</html>

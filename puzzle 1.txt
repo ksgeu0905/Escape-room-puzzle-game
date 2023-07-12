@@ -1,0 +1,36 @@
+what word on door makes you leave?
+ 4    1   6   5     2    7    3
+
+
+
+Word :- "It's something that you use every day, both in your spoken and written communication. It's made up of letters and carries meaning. You're using it right now to understand what I'm saying to you. What am I talking about?" and the id of that number is 1
+
+door :- youtube video opens after clicking on some object then you have to answer the number of doors in that video then if the answer is correct you get the next clue i.e. 5. door
+
+leave :- first user click on some object it tell that "Check out the pic on the wall?" and if the user picked wrong pic then it shows a dead end, if it is correct then it shows a picture of people leaving and ask them to observe the picture and complete the word l _ _ v _ using only vowels. then if guessed correctly show the word 3.leave
+
+on :- when a user hold a button it shows him the hidden word on the screen, 6.on
+
+what :- if START is written is TUBSU then what will be the word corresponding to VGZS with id 4.
+
+makes:- the number of people you listen in this audio is the id of word "make", 2.make
+
+you:- Ed sheeran was in the love with the shape of whom? and id is the jeresy number of Cristiano Ronaldo.
+
+
+Dead Ends:-
+1. if user guessed the wrong number of doors.
+2. if user click on the wrong picture
+3. if user guess wrong number of people in the audio.
+4. reduce time by 30 sec after every wrong answer after 3 tries in each puzzle.
+
+
+show seven images of clock with the timing for 3 sec each in the below mentioned sequence...
+4165273
+
+the sentence formed would be :- what word on door makes you leave?
+
+The exit door would ask you what is the secret code?
+
+
+

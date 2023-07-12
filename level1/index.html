@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    
+    <!-- bootstrap link -->
+    <link
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <title>Welcome</title>
+  </head>
+  <body class="welcome">
+    <span id="splash-overlay" class="splash"></span>
+    <span id="welcome" class="z-depth-4"></span>
+
+    <!-- Nav Bar Begin -->
+    <div id="main">
+      <div class="head">
+        <div class="col-div-6">
+          <i
+            class="uil uil-angle-right-b"
+            style="color: white; font-size: 30px"
+          ></i>
+          <span
+            style="font-size: 30px; cursor: pointer; color: white"
+            class="nav"
+          >
+            Welcome to the Puzzle!</span
+          >
+        </div>
+        
+        <div class="col-div-6-2">
+          <div class="profile" style="z-index: 1;">
+            <img
+            src="images/logo.png"
+            class="pro-img"
+            style="margin-right: 15px; margin-top: 0px"
+            />
+            <p
+            style="
+            width: 200px;
+            margin-left: 30px;
+            color: white;
+            margin-top: 0px;
+            font-size: 17px;
+            "
+            >
+            User<br /><span><a href="../index.html" style="color:#aab9bb"> Logout </a></span>
+            </p>
+          </div>
+        </div>
+        <br />
+      </div>
+      <!-- <hr style="opacity: 0.5; width: 99%; margin-bottom: 0px" /> -->
+    </div>
+    <!-- Nav Bar End -->
+    
+    <!-- Pop up begin-->
+    <div class="container" id="blur">
+      <div class="content">
+        <a href="#" onclick="popup()"> <img src="img1.jpg" alt="" id="levelOne"></a>
+        <br><h2 style="color: white; text-align: center;">Click to begin</h2>
+        <!-- <button  style="background-color: white;">hello</button> -->
+      </div>
+    </div>   
+    <div id="popupAction">
+      <h2 class="popHeading" style="text-align: center;">Read these Instructions carefully</h2>
+      <p>
+        <h3 class="popHeading">Puzzle Instructions</h3>
+        <ol>
+          <li>This game is to check your soft skills such as eye for detail, perseverance, curiosity etc.</li>
+          <li>You will have 30 min to solve the puzzle and your timer will start as soon as you click on Start button.</li>
+          <li>You are not allowed to Relod the page before you complete the puzzle, However if you do so your previous attempt time will be added in the total time as well.</li>
+          <li>You can solve the puzzle multiple time but your first attempt score will be used for the leaderboard.</li>
+        </ol>
+        <h3 class="popHeading">GamePlay</h3>
+        <ol>
+          <li>The game begins with you trapped in a room.</li>
+          <li>You need to find the right exit code to escape from the room.</li>
+          <li>You can move around the room using your mouse.</li>
+          <li>There are various clues hidden in the room which will lead you to the right code.</li>
+          <li>You can click on various object to find what is hidden inside that.</li>
+          <li>Remember to note down every clue you find in the puzzle. It may help you to reach the final code.</li>
+        </ol>
+        <h3 class="popHeading">Penalty</h3>
+        <ol>
+          <li>After 3 strikes, you will be charged 30 sec penalty for entering the wrong exit code.</li>
+          <li>In the mini puzzles whenever you enter the wrong code, you will be charged 10 sec penalty.</li>
+        </ol>
+
+      </p>
+
+
+      <div class="buttons">
+        <a href="game.html" style="text-decoration: none;" ><button class="btn btnStart">Start</button></a>
+        <button onclick="popup()" class="btn btnCancel" style="background-color: #b2abab;">Cancel </button>
+      </div>
+    </div> 
+
+    
+    <script src="js/script.js"></script>  
+  </body>
+    
+  </html>
+  

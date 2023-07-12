@@ -1,0 +1,275 @@
+.clearfix {
+    clear: both;
+}
+#main{
+  height: 56px;
+  box-shadow: 0px 0px 50px black;
+    background-color: #2a7088;
+}
+.head {
+    padding: 5px;
+    margin-bottom: 0px;
+}
+.col-div-6 {
+  display: flex;
+  /* flex-direction: row-reverse; */
+  width: 50%;
+  float: left;
+}
+.col-div-6-2 {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 50%;
+  float: left;
+}
+.profile {
+  display: inline;
+  float: right;
+  width: auto;
+}
+.pro-img {
+  float: left;
+  width: 40px;
+  margin-top: 5px;
+}
+ body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+} 
+
+main {
+  flex: 1 0 auto;
+}
+
+h1.title,
+.footer-copyright a {
+  font-family: 'Architects Daughter', cursive;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+/* start welcome animation */
+
+body.welcome {
+  background: #006b918f;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.welcome .splash {
+  height: 0px;
+  padding: 0px;
+  border: 130em solid #039be5;
+  position: fixed;
+  left: 50%;
+  top: 100%;
+  display: block;
+  box-sizing: initial;
+  overflow: hidden;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+}
+
+.welcome #welcome {
+  background: #311b92 ;
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
+}
+
+@keyframes init {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes puff {
+  0% {
+    top: 100%;
+    height: 0px;
+    padding: 0px;
+  }
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+  }
+}
+
+@keyframes borderRadius {
+  0% {
+    border-radius: 50%;
+  }
+  100% {
+    border-radius: 0px;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    background: #2a7088;
+    top: 100%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 50%;
+    background: #039be5;
+  }
+}
+
+@keyframes materia {
+  0% {
+    background: #0592d8;
+  }
+  50% {
+    background: #039be5;
+    top: 26px;
+  }
+  100% {
+    background: #311b92;
+    width: 100%;
+    height: 64px;
+    border-radius: 0px;
+    top: 26px;
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+} 
+
+/* Pop Up */
+.container#blur.active
+{
+  filter: blur(20px);
+  z-index: -1; 
+  user-select: none;
+  pointer-events: none;
+}
+.container{
+
+  z-index: 1;
+}
+#levelOne{
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  border-radius: 15px;
+  border: 2px solid black;
+  box-shadow: 11px 17px 50px black;
+  animation: levelOneTransition 0.8s infinite alternate-reverse;
+  transition: transform .3s;
+  
+}
+@keyframes levelOneTransition{
+  0% {
+    transform: scale(1.1,1.1);
+  }
+  100% {
+    transform: scale(1.2, 1.2);
+  }
+  
+}
+#levelOne:hover{
+  transform: scale(1.15);
+}
+#popupAction{
+  position:fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,.30);
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+  width: 80%;
+}
+#popupAction.active{
+  top: 50% ;
+  visibility: visible;
+  opacity: 1;
+  transition: .5s;
+  z-index: 1;
+}
+.btnArrange{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.popHeading{
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+li{
+  font-size: 15px;
+
+}
+
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnCancel{
+  background-color: #b2abab;
+  margin-left: 40px;
+  margin-right: 45px;
+}
+
+
+.btnStart{
+  background: transparent;
+  border: none;
+}
